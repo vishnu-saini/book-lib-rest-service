@@ -6,7 +6,7 @@
 
 ..* Database Diagram 
 
-![alt text](https://raw.githubusercontent.com/vishnu-saini/BookLibrary-Rest-Webservice/master/Database_EER.png"ER Diagram")
+![alt text](https://raw.githubusercontent.com/vishnu-saini/BookLibrary-Rest-Webservice/master/Database_EER.png "ER Diagram")
   
 ..* Resourse URL's to use this web service 
 1.	add student : POST – http://localhost:8080/booklib/api/student
