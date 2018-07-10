@@ -147,11 +147,4 @@ public class LoanServiceImpl implements LoanService {
 		return book;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.incedo.booklib.service.LoanService#test()
-	 */
-	@Override
-	public void test() {
-		System.out.println(studentDao.findOne(1).getBooks());
-	}
 }

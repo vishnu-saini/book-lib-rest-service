@@ -43,8 +43,4 @@ public interface LoanService {
 	 */
 	public List<LoanBookResponse> getIssuedBookOfStudent(int studentId) throws BooklibBusinessException;
 
-	/**
-	 * Test.
-	 */
-	public void test();
 }

@@ -43,8 +43,7 @@ public class BookResource {
 	/** The book service. */
 	@Autowired
 	private BookService bookService;
-	
-	
+
 	/** The message source. */
 	@Autowired
 	private MessageSource messageSource;
@@ -66,7 +65,6 @@ public class BookResource {
 			"authorid" }, produces = MediaType.APPLICATION_JSON_VALUE)
 	public RootResponse<BookResponse> getBooksForPagination(@RequestParam("page") int page,
 			@RequestParam("limit") int limit,
-
 			@RequestParam("authorid") int authorId) throws Exception {
 		logger.debug("page : " + page + "; limit : " + limit + "; authorid : " + authorId);
 		return new RootResponse<BookResponse>(ResponseType.SUCCESS,
@@ -80,11 +78,11 @@ public class BookResource {
 	 * @throws Exception
 	 *             the exception
 	 */
-	@RequestMapping(method = RequestMethod.GET, params = {}, produces = MediaType.APPLICATION_JSON_VALUE)
+	/*@RequestMapping(method = RequestMethod.GET, params = {}, produces = MediaType.APPLICATION_JSON_VALUE)
 	public RootResponse<List<BookWithIssueCountResponse>> getAllBooksWithAvailableCount() throws Exception {
 		return new RootResponse<List<BookWithIssueCountResponse>>(ResponseType.SUCCESS,
 				bookService.getAllBookAndAssignCount());
-	}
+	}*/
 
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public RootResponse<String> issueBook(@Valid @RequestBody Book book) throws Exception {

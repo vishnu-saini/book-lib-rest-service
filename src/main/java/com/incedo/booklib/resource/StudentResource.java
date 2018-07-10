@@ -28,7 +28,7 @@ import com.incedo.booklib.service.StudentService;
  * The Class StudentResource.
  */
 @RestController
-@RequestMapping("student")
+@RequestMapping("/api/student")
 public class StudentResource {
 
 	/** The student service. */

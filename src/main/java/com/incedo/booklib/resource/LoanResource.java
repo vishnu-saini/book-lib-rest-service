@@ -118,19 +118,6 @@ public class LoanResource {
 				loanService.getIssuedBookOfStudent(studentId));
 	}
 
-	/**
-	 * Test.
-	 *
-	 * @return the root response
-	 * @throws Exception
-	 *             the exception
-	 */
-	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public RootResponse<List<BookWithIssueCountResponse>> test() throws Exception {
-		loanService.test();
-		return null;
-	}
-
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
 	public void index(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
