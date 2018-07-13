@@ -3,6 +3,8 @@
  */
 package com.incedo.booklib.service;
 
+import java.util.List;
+
 import com.incedo.booklib.aspect.Loggable;
 import com.incedo.booklib.dto.Student;
 import com.incedo.booklib.exception.BooklibBusinessException;
@@ -32,4 +34,7 @@ public interface StudentService {
 	@Loggable
 	public boolean authenticateStudent(Student student) throws BooklibBusinessException;
 
+	
+	@Loggable
+	public List<Student> getAllStudents();
 }

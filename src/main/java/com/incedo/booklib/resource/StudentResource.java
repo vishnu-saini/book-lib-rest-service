@@ -3,15 +3,18 @@
  */
 package com.incedo.booklib.resource;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.incedo.booklib.aspect.Loggable;
@@ -19,14 +22,17 @@ import com.incedo.booklib.constant.ResponseType;
 import com.incedo.booklib.dto.Student;
 import com.incedo.booklib.dto.validation.group.StudentLoginValidationStep1;
 import com.incedo.booklib.dto.validation.group.StudentLoginValidationStep2;
+import com.incedo.booklib.responsebean.BookResponse;
 import com.incedo.booklib.responsebean.LoginResponse;
 import com.incedo.booklib.responsebean.RootResponse;
+import com.incedo.booklib.responsebean.StudentResponse;
 import com.incedo.booklib.service.StudentService;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class StudentResource.
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/api/student")
 public class StudentResource {
@@ -38,6 +44,12 @@ public class StudentResource {
 	/** The Message source. */
 	@Autowired
 	private MessageSource MessageSource;
+
+	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public RootResponse<StudentResponse> getBooksForPagination() throws Exception {
+		return new RootResponse<StudentResponse>(ResponseType.SUCCESS,
+				new StudentResponse(studentService.getAllStudents()));
+	}
 
 	/**
 	 * Adds the student.
